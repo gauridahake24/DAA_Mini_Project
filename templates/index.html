@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parallel Merge Sort</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Parallel Merge Sort</h1>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <form method="POST">
+            <div class="form-group">
+              <label for="jobs">Enter the number of processes:</label>
+              <input type="number" class="form-control" name="jobs" id="jobs" />
+            </div>
+            <div class="form-group">
+              <label for="length">Enter the length of the array to sort:</label>
+              <input
+                type="number"
+                class="form-control"
+                name="length"
+                id="length"
+              />
+            </div>
+            <div class="form-group">
+              <label for="all_cases">Test all variable lengths (Y/N)?</label>
+              <input
+                type="text"
+                class="form-control"
+                name="all_cases"
+                id="all_cases"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <hr class="mt-5" />
+      <h2 class="mt-4">Results</h2>
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Array Length</th>
+            <th>Multi-Threaded</th>
+            <th>Single-Threaded</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in conclusion %}
+          <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
