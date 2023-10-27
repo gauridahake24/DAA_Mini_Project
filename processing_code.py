@@ -119,8 +119,8 @@ if __name__ == "__main__":
             l *= 10
     else:
         main(jobs, length, conclusion)
-
     print(tabulate(conclusion, headers=["Array Length", "Single-Threaded", "Multi-Threaded"], tablefmt="grid"))
+    
 
 
 
